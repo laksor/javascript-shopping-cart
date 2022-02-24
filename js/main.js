@@ -13,6 +13,7 @@ function updateNumber(product, price, isIncreasing){
     // price update
     const priceTotal = document.getElementById(product + '-price');
     priceTotal.innerText = quantityNumber * price;
+    // calling calculate function
     calculateTotal();
 }
 // input value
@@ -52,4 +53,8 @@ document.getElementById('case-increase').addEventListener('click', function(){
 // case decrease
 document.getElementById('case-decrease').addEventListener('click', function(){
     updateNumber('case', 59, false);
+})
+// check out
+document.getElementById('check-out').addEventListener('click', function(){
+    window.location.href = 'thank.html';
 })
