@@ -9,10 +9,31 @@ function updateNumber(product, price, isIncreasing){
         quantityNumber = parseInt(quantityNumber) - 1;
     }
     quantity.value = quantityNumber;
-    
+
     // price update
     const priceTotal = document.getElementById(product + '-price');
     priceTotal.innerText = quantityNumber * price;
+    calculateTotal();
+}
+// input value
+function getInputValue(product){
+    const input = document.getElementById(product + '-quantity');
+    const inputValue = parseInt(input.value);
+    return inputValue;
+}
+// calculate total
+function calculateTotal(){
+    const phoneTotal = getInputValue('iphone') * 1219;
+    const caseTotal = getInputValue('case') * 59;
+    const subTotal = phoneTotal + caseTotal;
+    const tax = subTotal / 10;
+    const total = subTotal + tax;
+
+    document.getElementById('subtotal').innerText = subTotal;
+    document.getElementById('tax').innerText = tax;
+    document.getElementById('total').innerText = total;
+
+
 }
 
 // phone increase
