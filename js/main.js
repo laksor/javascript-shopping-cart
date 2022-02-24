@@ -1,5 +1,5 @@
-function updateNumber(quantityy,isIncreasing){
-    const quantity = document.getElementById(quantityy);
+function updateNumber(product, price, isIncreasing){
+    const quantity = document.getElementById(product + '-quantity');
     let quantityNumber = quantity.value;
 
     if(isIncreasing == true){
@@ -10,27 +10,24 @@ function updateNumber(quantityy,isIncreasing){
     }
     quantity.value = quantityNumber;
     // phone price
-    const phoneTotal = document.getElementById('iphone-price');
-    phoneTotal.innerText = quantityNumber * 1219;
-    // case price
-    const caseTotal = document.getElementById('case-price');
-    caseTotal.innerText = quantityNumber * 59;
+    const priceTotal = document.getElementById(product + '-price');
+    priceTotal.innerText = quantityNumber * price;
 }
 
 // phone increase
 document.getElementById('iphone-increase').addEventListener('click', function(){
-    updateNumber('iphone-quantity',true);
+    updateNumber('iphone', 1219, true);
 })
 // phone decrease
 document.getElementById('iphone-decrease').addEventListener('click', function(){
-    updateNumber('iphone-quantity',false);
+    updateNumber('iphone', 1219, false);
 })
 
 // case increase
 document.getElementById('case-increase').addEventListener('click', function(){
-    updateNumber('case-quantity',true);
+    updateNumber('case', 59, true);
 })
 // case decrease
 document.getElementById('case-decrease').addEventListener('click', function(){
-    updateNumber('case-quantity',false);
+    updateNumber('case', 59, false);
 })
