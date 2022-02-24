@@ -9,7 +9,8 @@ function updateNumber(product, price, isIncreasing){
         quantityNumber = parseInt(quantityNumber) - 1;
     }
     quantity.value = quantityNumber;
-    // phone price
+    
+    // price update
     const priceTotal = document.getElementById(product + '-price');
     priceTotal.innerText = quantityNumber * price;
 }
